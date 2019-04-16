@@ -22,16 +22,18 @@ export default (state=initialState, action) => {
     });
   }
 
-  else if(action.type === MAKE_GUESS) {
+  if(action.type === MAKE_GUESS) {
     let feedback, guess;
 
     guess = parseInt(action.guess, 10);
     if(isNaN(guess)) {
-      feedback = 'Please enter a valid number' 
-    } return Object.assign({}, state, {
-      feedback, 
-      guesses: [...state.guesses, guess]
-    })
+      feedback = 'Please enter a valid number';
+    
+      return Object.assign({}, state, {
+        feedback, 
+        guesses: [...state.guesses, guess]
+      });
+    }  
 
     // error says unreachable code here
     const difference = Math.abs(guess - state.correctAnswer);
@@ -48,7 +50,7 @@ export default (state=initialState, action) => {
     return Object.assign({} , state, {
       feedback, 
       guesses: [...state.guesses, guess]
-    }) 
+    });
   }
 
   if (action.type === GENERATE_AURAL_UPDATE) {
