@@ -35,7 +35,6 @@ export default (state=initialState, action) => {
       });
     }  
 
-    // error says unreachable code here
     const difference = Math.abs(guess - state.correctAnswer);
     
     if (difference >= 50){
