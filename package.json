@@ -27,7 +27,7 @@
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
     "sshpk": "^1.16.1",
-    "url-parse": "^1.4.7",
+    "url-parse": "^1.5.0",
     "webpack-dev-server": "^3.5.1"
   },
   "scripts": {
